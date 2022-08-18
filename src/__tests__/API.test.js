@@ -1,4 +1,4 @@
-import { getGeneration, getPokemon } from '../util';
+import { getGeneration, getPokemon } from '../APIHelper';
 describe("Get Bulbasaur", () => {
     test("It should return the pokemon named 'bulbasaur'", async () => {
         expect((await getPokemon(0, 1))[0]["name"]).toEqual("bulbasaur");      
