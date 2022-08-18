@@ -1,4 +1,22 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 3em;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
 #logo {
     height: 6em;
     width: 17em;
+}
+#navbar {
+    display: flex;
+    gap: 10em;
+    margin-right: 20em;
+    font-size: var(--font-size-large);
+}
+#navbar * {
+    text-decoration: none;
+    color: var(--font-colour);    
 }

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header>
+        <header id="header">
             <img id="logo" src="./img/logo.png" alt="Pokedex logo" height="96" width="272"/>
-            <nav>
+            <nav id="navbar">
                 <Link to="/">All Pokemon</Link>
                 <Link to="/favourites">Favourites</Link>
             </nav>

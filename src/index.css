@@ -1,3 +1,9 @@
+:root {
+    --font-colour: #000;
+    --font-size-large: 1.5em;
+    --font-size-normal: 1.25em;
+    --font-size-small: 1em;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
