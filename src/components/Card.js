@@ -9,7 +9,7 @@ const Card = ({ name, info }) => {
         (async () => {
             setPokemonInfo((await info.then(res=>res.clone().json())));
         })()
-    });
+    }, [info]);
 
     if(pokemonInfo !== undefined){
         return (
@@ -23,7 +23,7 @@ const Card = ({ name, info }) => {
                 />
                 <div className="info-line">
                     <p>{formatId(pokemonInfo.id)}</p>
-                    <p>{name}</p>
+                    <p>{name.toTitleCase()}</p>
                 </div>
             </section>
         )

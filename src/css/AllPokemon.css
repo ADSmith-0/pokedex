@@ -1,10 +1,17 @@
-#pokemon-grid {
+#all-pokemon-options {
+    background-color: #fff;
+    box-shadow: 0 0.1em 0.3em #00000033;
+    padding: 1em;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     place-items: center;
-    gap: 3em 0;
-    margin: 0 2em;
-    margin-top: 1em;
-    height: 80vh;
-    overflow-y: scroll;
+}
+#generation-option {
+    grid-column: 2/3;
+}
+#pokemon-loaded-option{
+    grid-column: 3/4;
+}
+#all-pokemon-options label select {
+    margin-left: 1em;
 }
