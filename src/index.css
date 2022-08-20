@@ -5,6 +5,7 @@
     --font-size-small: 1em;
     --background-color: #eee;
     --blue: #0070f3;
+    --outline-colour: #0003;
 }
 * {
     font-family: Arial, Helvetica, sans-serif;
