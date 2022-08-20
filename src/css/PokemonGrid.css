@@ -3,7 +3,14 @@
     grid-template-columns: repeat(5, 1fr);
     place-items: center;
     gap: 3em 0;
-    margin: 1em 2em;
+    margin: 1em auto;
+    padding: 0 2em;
+    width: 65vw;
     height: 75vh;
     overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#pokemon-grid::-webkit-scrollbar {
+    display: none; /* Chrome */
 }

@@ -1,0 +1,31 @@
+#searchbar-component {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#searchbar-component input {
+    border: 0.1em solid #0003;
+    border-radius: 0.3em 0 0 0.3em;
+    outline: none;
+    padding-left: 0.7em;
+    font-size: var(--font-size-normal);
+    height: 1.9em;
+}
+#searchbar-component input:focus {
+    border-color: var(--blue);
+}
+#search-btn {
+    height: 2.2em;
+    width: 2.5em;
+    cursor: pointer;
+    border-radius: 0 0.3em 0.3em 0;
+    background-color: var(--blue);
+    color: #fff;
+    border: none;
+    font-size: var(--font-size-normal);
+}
+#search-icon {
+    display: inline-block;
+    transform: rotateZ(-45deg);
+    font-size: var(--font-size-large);
+}

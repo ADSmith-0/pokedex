@@ -1,4 +1,3 @@
-import React from 'react'
 import Card from './Card';
 import { removeSpeciesFromUrl } from '../util';
 import '../css/PokemonGrid.css';

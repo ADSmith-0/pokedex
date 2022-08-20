@@ -1,6 +1,25 @@
+import '../css/Loading.css';
+/* HTML and CSS from 
+    https://loading.io/css/
+*/ 
 const Loading = () => {
     return (
-        <h1>Loading...</h1>
+        <section className="loading-background">
+            <div className="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
     )
 }
 export default Loading;

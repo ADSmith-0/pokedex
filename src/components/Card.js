@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { formatId } from '../util';
+import Loading from "./Loading";
 import '../css/Card.css';
 
 const Card = ({ name, info }) => {
@@ -29,7 +30,7 @@ const Card = ({ name, info }) => {
         )
     }else{
         return (
-            <p>Loading</p>
+            <Loading />
         )
     }
 }

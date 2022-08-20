@@ -4,7 +4,7 @@
     padding: 1em 3em;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #0003;
     position: sticky;
     top: 0;
     background-color: white;
@@ -15,8 +15,8 @@
 }
 #navbar {
     display: flex;
-    gap: 10em;
-    margin-right: 20em;
+    justify-content: space-around;
+    gap: 5em;
     font-size: var(--font-size-large);
 }
 #navbar * {

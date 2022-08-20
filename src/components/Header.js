@@ -1,5 +1,6 @@
 import '../css/Header.css';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar.js';
 
 const Header = () => {
     return (
@@ -8,7 +9,9 @@ const Header = () => {
             <nav id="navbar">
                 <Link to="/">All Pokemon</Link>
                 <Link to="/favourites">Favourites</Link>
+                <Link to="/compare">Compare</Link>
             </nav>
+            <SearchBar />
         </header>
     )
 }
