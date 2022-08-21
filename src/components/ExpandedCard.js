@@ -2,11 +2,11 @@ import { formatId } from '../util';
 import Loading from './Loading';
 import '../css/ExpandedCard.css';
 
-const ExpandedCard = ({ info, setExpandedCardInfo, backEnabled=true }) => {
+const ExpandedCard = ({ info, setExpandedCardInfo, blockerEnabled=true, backEnabled=true }) => {
 
     if (info !== undefined){
         return (
-            <section id="blocker">
+            <section id={blockerEnabled ? "blocker" : ""}>
                 <section className="expanded-card">
                     {
                         backEnabled &&
