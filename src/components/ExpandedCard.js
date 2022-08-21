@@ -20,7 +20,7 @@ const ExpandedCard = ({ info, setExpandedCardInfo, blockerEnabled=true, backEnab
                             <p>{formatId(info.id)}</p>
                             <p>{info.name.toTitleCase()}</p>
                         </div>
-                        <p className="pokemon-types">Types: {info.types.reduce((acc, val) => acc+ ` ${val.type.name},`, "").slice(0,-1)}</p>
+                        <p className="pokemon-types">Type(s): {info.types.reduce((acc, val) => acc+ ` ${val.type.name},`, "").slice(0,-1)}</p>
                         <section className="pokemon-stats-list">
                             {
                                 info.stats.map((stat, id) => (
