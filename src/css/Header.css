@@ -8,6 +8,9 @@
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 99;
+    height: 8em;
+    box-sizing: border-box;
 }
 #logo {
     height: 6em;

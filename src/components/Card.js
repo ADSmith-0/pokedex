@@ -3,9 +3,9 @@ import { formatId } from '../util';
 import Loading from "./Loading";
 import FavouriteButton from "./FavouriteButton";
 import '../css/Card.css';
-import { getFavouritedPokemon, isPokemonFavourited, setFavouritedPokemon } from "../LocalStorageHelper";
+import { isPokemonFavourited, toggleFavourited } from "../LocalStorageHelper";
 
-const Card = ({ name, info }) => {
+const Card = ({ name, info, setExpandedCardInfo }) => {
     const [ pokemonInfo, setPokemonInfo ] = useState();
     const [ isFavourited, setIsFavourited ] = useState(isPokemonFavourited());
 
@@ -16,18 +16,14 @@ const Card = ({ name, info }) => {
     }, [info]);
 
     useEffect(() => {
-        const favouritedPokemon = getFavouritedPokemon();
-        if(isFavourited){
-            setFavouritedPokemon({...favouritedPokemon, [name]: process.env.REACT_APP_API_URL+"pokemon/"+name});
-        }else{
-            delete favouritedPokemon[name];
-            setFavouritedPokemon(favouritedPokemon);
-        }
+        toggleFavourited(name, isFavourited);
     }, [name, isFavourited]);
+
+    const setCardExpanded = e => setExpandedCardInfo(info);
 
     if(pokemonInfo !== undefined){
         return (
-            <section className="card">
+            <section className="card" onClick={setCardExpanded}>
                 <FavouriteButton passIsFavouritedBack={setIsFavourited} isPokemonFavourited={isFavourited}/>
                 <img 
                     className="pokemon-sprite" 
@@ -44,7 +40,9 @@ const Card = ({ name, info }) => {
         )
     }else{
         return (
-            <Loading />
+            <section className="card">
+                <Loading />
+            </section>
         )
     }
 }
