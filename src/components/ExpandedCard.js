@@ -1,19 +1,10 @@
-import { useEffect, useState } from 'react';
 import { formatId } from '../util';
 import Loading from './Loading';
 import '../css/ExpandedCard.css';
 
 const ExpandedCard = ({ info, setExpandedCardInfo }) => {
 
-    const [pokemonInfo, setPokemonInfo] = useState();
-
-    useEffect(() => {
-        (async () => {
-            setPokemonInfo((await info.then(res => res.clone().json())));
-        })()
-    }, [info]);
-
-    if(pokemonInfo !== undefined){
+    if (info !== undefined){
         return (
             <section id="blocker">
                 <section className="expanded-card">
@@ -21,14 +12,14 @@ const ExpandedCard = ({ info, setExpandedCardInfo }) => {
                         <img className="back-arrow" src="/img/left-arrow-white-96x96.png" alt="back arrow" height="40" width="40"/>
                     </button>
                     <section className="expanded-card-info">
-                        <img src={pokemonInfo.sprites.front_default} height="150" width="150" alt={pokemonInfo.name+" sprite"}/>
+                        <img src={info.sprites.front_default} height="150" width="150" alt={info.name+" sprite"}/>
                         <div className="pokemon-identification">
-                            <p>{formatId(pokemonInfo.id)}</p>
-                            <p>{pokemonInfo.name}</p>
+                            <p>{formatId(info.id)}</p>
+                            <p>{info.name.toTitleCase()}</p>
                         </div>
                         <section className="pokemon-stats-list">
                             {
-                                pokemonInfo.stats.map((stat, id) => (
+                                info.stats.map((stat, id) => (
                                     <div key={id} className="pokemon-stat">
                                         <label>{stat.stat.name}:</label>
                                         <p>{stat.base_stat}</p>

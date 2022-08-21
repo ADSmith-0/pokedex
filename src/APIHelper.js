@@ -17,4 +17,13 @@ const getGeneration = async genNumber => {
     return result["pokemon_species"];
 }
 
-export { getPokemon, getGeneration }
+/*
+    Get all the information for a single pokemon
+    pokemonName <String>: name of pokemon to find, in lower case
+    return <Object>: JSON object that has all pokemon properties
+*/ 
+const getPokemonInfo = async pokemonName => (
+    await fetch(process.env.REACT_APP_API_URL + "pokemon/" + pokemonName).then(res => res.json())
+)
+
+export { getPokemon, getGeneration, getPokemonInfo }

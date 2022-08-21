@@ -19,11 +19,9 @@ const Card = ({ name, info, setExpandedCardInfo }) => {
         toggleFavourited(name, isFavourited);
     }, [name, isFavourited]);
 
-    const setCardExpanded = e => setExpandedCardInfo(info);
-
     if(pokemonInfo !== undefined){
         return (
-            <section className="card" onClick={setCardExpanded}>
+            <section className="card" onClick={() => setExpandedCardInfo(pokemonInfo)}>
                 <FavouriteButton passIsFavouritedBack={setIsFavourited} isPokemonFavourited={isFavourited}/>
                 <img 
                     className="pokemon-sprite" 
