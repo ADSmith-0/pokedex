@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { formatId } from '../util';
 import Loading from "./Loading";
+import FavouriteButton from "./FavouriteButton";
 import '../css/Card.css';
+import { getFavouritedPokemon, isPokemonFavourited, setFavouritedPokemon } from "../LocalStorageHelper";
 
 const Card = ({ name, info }) => {
     const [ pokemonInfo, setPokemonInfo ] = useState();
+    const [ isFavourited, setIsFavourited ] = useState(isPokemonFavourited());
 
     useEffect(() => {
         (async () => {
@@ -12,9 +15,20 @@ const Card = ({ name, info }) => {
         })()
     }, [info]);
 
+    useEffect(() => {
+        const favouritedPokemon = getFavouritedPokemon();
+        if(isFavourited){
+            setFavouritedPokemon({...favouritedPokemon, [name]: process.env.REACT_APP_API_URL+"pokemon/"+name});
+        }else{
+            delete favouritedPokemon[name];
+            setFavouritedPokemon(favouritedPokemon);
+        }
+    }, [name, isFavourited]);
+
     if(pokemonInfo !== undefined){
         return (
             <section className="card">
+                <FavouriteButton passIsFavouritedBack={setIsFavourited} isPokemonFavourited={isFavourited}/>
                 <img 
                     className="pokemon-sprite" 
                     src={pokemonInfo.sprites.front_default}

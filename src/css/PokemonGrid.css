@@ -1,7 +1,7 @@
 #pokemon-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    place-items: center;
+    justify-content: center;
     gap: 3em 0;
     margin: 1em auto;
     padding: 0 2em;

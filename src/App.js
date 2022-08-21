@@ -4,6 +4,9 @@ import AllPokemon from "./AllPokemon";
 import Favourites from "./Favourites";
 import Compare from "./Compare";
 import GetAllPokemonNames from "./getAllPokemonNames";
+import { initialiseFavouritedPokemon } from "./LocalStorageHelper";
+
+initialiseFavouritedPokemon();
 
 function App() {
   return (

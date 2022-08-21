@@ -32,8 +32,8 @@ const SearchBar = () => {
     <section id="searchbar-component">
         <input id="search-name" type="text" value={inputValue} onInput={handleSearchInput} placeholder="Search"/>
         <ul id="search-autocomplete" className={isAutocompleteVisible ? "visible" : ""}>
-            {suggestions.map(suggestion => (
-                <li className="autocomplete-suggestion" onClick={populateSearchBar}>{suggestion}</li>
+            {suggestions.map((suggestion, id) => (
+                <li key={id} className="autocomplete-suggestion" onClick={populateSearchBar}>{suggestion}</li>
             ))}
         </ul>
         <button id="search-btn"><span id="search-icon">⚲</span></button>

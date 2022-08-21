@@ -1,0 +1,12 @@
+.favourite-btn {
+    color: var(--outline-colour);
+    background: none;
+    border: none;
+    display: inline;
+    cursor: pointer;
+    font-size: var(--font-size-large);
+    padding-bottom: 0.1em;
+}
+.selected.favourite-btn {
+    color: #ffdf00;
+}
