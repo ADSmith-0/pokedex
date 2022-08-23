@@ -4,8 +4,9 @@
 */ 
 const initialiseFavouritedPokemon = () => {
     const favouritedPokemon = getFavouritedPokemon();
-    console.log(favouritedPokemon);
-    if(Object.keys(favouritedPokemon).length === 0) localStorage.setItem('favourited_pokemon', JSON.stringify({}));
+    if(favouritedPokemon){
+        localStorage.setItem('favourited_pokemon', JSON.stringify({}));
+    }
 }
 
 /*
