@@ -4,9 +4,7 @@
 */ 
 const initialiseFavouritedPokemon = () => {
     const favouritedPokemon = getFavouritedPokemon();
-    if(favouritedPokemon){
-        localStorage.setItem('favourited_pokemon', JSON.stringify({}));
-    }
+    if(!favouritedPokemon) localStorage.setItem('favourited_pokemon', JSON.stringify({}));
 }
 
 /*
@@ -28,8 +26,9 @@ const setFavouritedPokemon = pokemonName => localStorage.setItem('favourited_pok
     return <Boolean>: True of false if the pokemon has been found
 */ 
 const isPokemonFavourited = pokemonName => {
-    const favouritedPokemon = getFavouritedPokemon();
-    return favouritedPokemon[pokemonName];
+    const favouritedPokemon = getFavouritedPokemon() || false;
+    if(favouritedPokemon) return !!favouritedPokemon[pokemonName];
+    return false;
 }
 
 const addToFavourited = pokemonName => {

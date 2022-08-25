@@ -3,11 +3,11 @@ import { formatId } from '../util';
 import Loading from "./Loading";
 import FavouriteButton from "./FavouriteButton";
 import '../css/Card.css';
-import { toggleFavourited } from "../LocalStorageHelper";
+import { isPokemonFavourited, addToFavourited, removeFromFavourited } from "../LocalStorageHelper";
 
 const Card = ({ name, info, setExpandedCardInfo }) => {
     const [ pokemonInfo, setPokemonInfo ] = useState();
-    const [ isFavourited, setIsFavourited ] = useState(false);
+    const [ isFavourited, setIsFavourited ] = useState(isPokemonFavourited(name));
 
     useEffect(() => {
         (async () => {
@@ -16,7 +16,11 @@ const Card = ({ name, info, setExpandedCardInfo }) => {
     }, [info]);
 
     useEffect(() => {
-        toggleFavourited(name, isFavourited);
+        if(isFavourited){
+            addToFavourited(name);
+        }else{
+            removeFromFavourited(name);
+        }
     }, [name, isFavourited]);
 
     if(pokemonInfo !== undefined){

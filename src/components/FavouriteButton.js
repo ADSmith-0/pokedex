@@ -4,7 +4,10 @@ import '../css/FavouriteButton.css';
 const FavouriteButton = ({ passIsFavouritedBack, isPokemonFavourited }) => {
     const [isFavourited, setIsFavourited] = useState(isPokemonFavourited);
     
-    const handleFavourited = e => setIsFavourited(!isFavourited);
+    const handleFavourited = e => {
+        e.stopPropagation();
+        setIsFavourited(!isFavourited)
+    }
 
     useEffect(() => {
         passIsFavouritedBack(isFavourited);
